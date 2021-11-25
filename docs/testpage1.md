@@ -1,16 +1,33 @@
-[M4x10 screws]:Parts.yaml#M4x10PanSteel
-[No. 2 Phillips screwdriver]:Parts.yaml#Screwdriver_Philips_No2
+[M4x10 screws]:Parts/M4x10PanSteel.md ""
+[No. 2 Phillips screwdriver]:Parts/Screwdriver_Philips_No2.md ""
 # Test Page 1
 
-{{BOM}}
 
-## Put screws into the widget {pagestep}
 
-* Get a [No. 2 Phillips screwdriver]{Qty: 1, Cat: tool} ready
-* Take three [M4x10 screws]{Qty: 3} and screw them into the [widget](widget.md){Qty: 1}
+### Parts
 
-## Put more screws into the widget {pagestep}
+* 5 [M4x10 screws]{: Class="bom"} 
+* 1 [widget]{: Class="bom"} 
 
-* Find the [screwdriver][No. 2 Phillips screwdriver]{Qty: 1, Cat: tool} again
-* Take two more [M4x10 screws]{Qty: 2} and screw them into the same widget
 
+### Tools
+
+* 1 [No. 2 Phillips screwdriver]{: Class="bom"} 
+
+
+
+
+## Step 1: Put screws into the widget {:id="put-screws-into-the-widget" class="page-step"}
+
+* Get a [No. 2 Phillips screwdriver] ready
+* Take three [M4x10 screws] and screw them into the [widget]
+
+## Step 2: Put more screws into the widget {:id="put-more-screws-into-the-widget" class="page-step"}
+
+* Find the [screwdriver][No. 2 Phillips screwdriver] again
+* Take two more [M4x10 screws] and screw them into the same widget
+[widget]:widget.md ""
+
+---
+
+[Previous page](index_BOM.md) | [Next page](testpage2.md)
