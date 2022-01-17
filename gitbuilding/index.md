@@ -1,6 +1,6 @@
-# Test Project
-This is a test
-This is a great place to start making your documentation!
+# Open Lab Frame  
+Open Lab Frame is an open source project aiming at building modular and motorized/automated frames.  
+Modular  = XYZ size of the frame + different heads (camera, pipette or anything else)  
 
 You should link to a couple of pages:
 
