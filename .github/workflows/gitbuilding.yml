@@ -16,7 +16,6 @@ jobs:
         run: |
           pip install gitbuilding
           cd gitbuilding/
-          gitbuilding build
           gitbuilding build-html
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
