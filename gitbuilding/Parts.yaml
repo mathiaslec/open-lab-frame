@@ -1,3 +1,31 @@
+MaskingTape:
+    Name: Masking tape
+    Suppliers:
+        Conrad: 
+            PartNo: 2266109
+            Link: https://www.conrad.fr/p/3m-5011850-5011850-ruban-de-masquage-beige-l-x-l-50-m-x-18-mm-1-pcs-2266109
+
+AcrylicGlue:
+    Name: Acrylic glue
+    Suppliers:
+        Conrad:
+            PartNo: 539813
+            Link: https://www.conrad.fr/p/adhesif-pour-verre-acrylique-539813-100-g-539813
+
+PMMAsheet:
+    Name: 5 mm PMMA sheet
+    Description:
+    Specs:
+        Thickness: 5 mm
+        Length: 500 mm
+        Width: 500 mm
+    Suppliers:
+        Polydis: 
+            PartNo: PMAGS505
+            Link: https://www.polydis.fr/pmma-coule-incolore-500x500x5-mm-c2x30047366
+        A4:
+            PartNo: PLMXT-5-500X500-TS
+            Link: https://www.a4.fr/pmma-extrude-transparent-5-500-x-500.html
 
 M4x10PanSteel:
     Name: M4x10 Pan Head Steel
@@ -16,6 +44,16 @@ M4x10PanSteel:
         McMasterCarr:
             PartNo: 90116A207
             Link: https://www.mcmaster.com/90116A207
+
+LaserCutter:
+    Name: 60W CO2 laser cutter
+    Description:
+    Suppliers: 
+        Jamp78: 
+            PartNo: JA55
+            Link: http://www.jamp78.fr/
+
+
 Screwdriver_Philips_No2:
     Name: No. 2 Phillips screwdriver
     Description: >
