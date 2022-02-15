@@ -1,3 +1,167 @@
+TouchScreen:
+    Name: Touch Screen
+    Suppliers:
+        Conrad:
+            PartNo: 1503822
+            Link: https://www.conrad.fr/p/module-ecran-tactile-joy-it-rb-lcd5-127-cm-5-pouces-800-x-480-pixel-convient-pour-raspberry-pi-avec-stylet-1-pcs-1503822
+
+M3x10mm:
+    Name: M3x10mm screws
+    Suppliers:
+        Conrad:
+            PartNo: 1062107
+            Link: https://www.conrad.fr/p/vis-cylindrique-toolcraft-1062107-100-pcs-m3-10-mm-tete-cylindrique-6-pans-interieurs-acier-inoxydable-na-1062107
+EmergencyButton:
+    Name: Emergency Button
+    Suppliers:
+        Conrad:
+            PartNo: 1233789
+            Link: https://www.conrad.fr/p/deca-a20b-v4e30r-arret-durgence-avec-element-de-contact-240-vac-6-a-3-no-t-ip65-1-pcs-1233789
+
+Arduino:
+    Name: Arduino board
+    Suppliers:
+        Conrad:
+            PartNo: https://www.conrad.fr/p/carte-compatible-joy-it-arduino-uno-r3-dip-joy-it-atmega328-1-pcs-1456485
+            Link: 1456485
+
+CNCShield:
+    Name: CNC Shield
+    Suppliers:
+        Conrad:
+            PartNo: 1646889
+            Link: https://www.conrad.fr/p/joy-it-ard-cnc-kit1-convient-pour-cartes-arduino-arduino-uno-1-pcs-1646889
+
+CNCShieldWires:
+    Name: Wires for CNC shield
+    Suppliers:
+        Conrad:
+            PartNo:
+            Link: 
+
+RPiWires:
+    Name: Wires to power RPi
+    Suppliers:
+        Conrad:
+            PartNo: 1570820
+            Link: https://www.conrad.fr/p/cordon-fil-a-carte-assemble-nombre-total-de-poles-2-741213-pas-254-mm-1-pcs-1570820
+
+M2nut:
+    Name: M2 nuts
+    Suppliers:
+        Conrad:
+            PartNo: 888114
+            Link: https://www.conrad.fr/p/toolcraft-888114-ecrou-hexagonal-m2-din-934-acier-inoxydable-a2-10-pcs-888114
+M2x20mm: 
+    Name: M2x20mm screws
+    Suppliers:  
+        Conrad:
+            PartNo: 1790638
+            Link: https://www.conrad.fr/p/toolcraft-to-5371914-vis-cylindrique-m2-20-mm-6-pans-interieurs-iso-4762-acier-inoxydable-a2-100-pcs-1790638
+RPi:
+    Name: RaspberryPi
+    Suppliers:
+        Conrad:
+            PartNo: 2138863
+            Link: https://www.conrad.fr/p/raspberry-pi-4-b-2-gb-4-x-15-ghz-2138863
+
+crimpConn:
+    Name: Crimp connectors
+    Suppliers:
+        Conrad:
+            PartNo: 1661654
+            Link: https://www.conrad.fr/p/tru-components-tc-6646616-assortiment-de-cosses-a-sertir-050-mm-150-mm-rouge-140-pcs-1661654
+
+CNCCable:
+    Name: Cable for CNC shield powering
+    Suppliers:
+        Conrad:
+            PartNo: 1572357
+            Link: https://www.conrad.fr/p/fil-de-cablage-liy-z-tru-components-sh1998c508-1572357-2-x-2-mm-rouge-noir-10-m-1572357
+
+fan:
+    Name: fan
+    Suppliers:
+        Conrad:
+            PartNo: 2147488
+            Link: https://www.conrad.fr/p/sunon-ventilateur-axial-5-vdc-1394-mh-l-x-l-x-h-40-x-40-x-10-mm-2147488
+
+M3x18mm:
+    Name: M3x18mm screws
+    Suppliers:
+        Conrad:
+            PartNo: 1790655
+            Link: https://www.conrad.fr/p/toolcraft-to-5371965-vis-cylindrique-m3-18-mm-6-pans-interieurs-iso-4762-acier-inoxydable-a2-100-pcs-1790655
+
+ferrules:
+    Name: Ferrules
+    Suppliers:
+        Conrad:
+            PartNo: 1564522
+            Link: https://www.conrad.fr/p/assortiment-dembouts-simples-tru-components-e400fs-739872-050-mm-250-mm-blanc-bleu-rouge-noir-gris-400-pcs-1564522
+
+crimpingPliers:
+    Name: Crimping pliers
+    Suppliers:
+        Conrad:
+            PartNo: 844519
+            Link: https://www.conrad.fr/p/bruder-mannesmann-m-1092-s-pince-a-sertir-pour-connecteurs-enfichables-isoles-15-a-6-mm-844519
+
+yellow_cable:
+    Name: Yellow/Green cable
+    Suppliers:
+        Conrad:
+            PartNo: 1428446
+            Link: https://www.conrad.fr/p/helukabel-200200gnge-fil-de-cablage-h07v-k-1-x-150-mm-jaune-vert-marchandise-vendue-au-metre-1428446
+brown_cable:
+    Name: Brown cable
+    Suppliers:
+        Conrad:
+            PartNo: 1428445
+            Link: https://www.conrad.fr/p/helukabel-200200bn-fil-de-cablage-h07v-k-1-x-150-mm-marron-marchandise-vendue-au-metre-1428445
+blue_cable:
+    Name: Blue cable
+    Suppliers:
+        Conrad:
+            PartNo: 1524778
+            Link: https://www.conrad.fr/p/helukabel-64125-fil-de-cablage-h07v2-k-1-x-150-mm-bleu-marchandise-vendue-au-metre-1524778
+
+M4x10mm:
+    Name: M4x10mm screws
+    Suppliers:
+        Conrad:
+            PartNo: 839709
+            Link: https://www.conrad.fr/p/vis-cylindrique-toolcraft-839709-100-pcs-m4-10-mm-tete-cylindrique-6-pans-interieurs-acier-inoxydable-na-839709
+
+PSU2:
+    Name: 2725-LM200-10B12-ND PSU
+    Suppliers:
+        Digikey:
+            PartNo: 2725-LM200-10B12-ND
+            Link: https://www.digikey.fr/fr/products/detail/mornsun-america-llc/LM200-10B12/13968702
+
+
+M3x8mm:
+    Name: M3x8mm screws
+    Suppliers:
+        Conrad:
+            PartNo: 1061818
+            Link: https://www.conrad.fr/p/vis-cylindrique-toolcraft-1061818-100-pcs-m3-8-mm-tete-cylindrique-6-pans-interieurs-acier-inoxydable-na-1061818
+
+PSU1:
+    Name: LM35-10D0512-10 PSU
+    Suppliers:
+        Digikey:
+            PartNo: 2725-LM35-10D0512-10-ND
+            Link: https://www.digikey.fr/fr/products/detail/mornsun-america-llc/LM35-10D0512-10/13968639
+
+M3nut:
+    Name: M3 nuts
+    Suppliers:
+        Conrad: 
+            PartNo: 131880
+            Link: https://www.conrad.fr/p/toolcraft-131880-ecrou-hexagonal-m3-din-934-acier-100-pcs-131880
+
 MaskingTape:
     Name: Masking tape
     Suppliers:
