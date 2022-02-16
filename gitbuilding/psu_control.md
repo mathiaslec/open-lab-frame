@@ -92,7 +92,8 @@ Make sure you connect the black wire to -Vo on the [PSU for CNC shield and motor
 ![](images/lid-psu_box.png) 
 ![](images/lid-psu_box_at.png) 
 
-Attach the [emergency button](Parts.yaml#EmergencyButton){qty:1} the PSU lid. Then fix 4x [3D printed attaches](files/stl/lid_attach.stl){qty:4} with [M3x10mm screws](Parts.yaml#M3x10mm){qty:4} and [M3 nuts]{qty:4}.
+Attach the [emergency button](Parts.yaml#EmergencyButton){qty:1} to the PSU lid. Connect [these wires]{qty:1} to the emergency button, then to the CNC shield, on "E-STOP" pins.  
+Then fix 4x [3D printed attaches](files/stl/lid_attach.stl){qty:4} with [M3x10mm screws](Parts.yaml#M3x10mm){qty:4} and [M3 nuts]{qty:4}.
 
 ## Control lid
 ![](images/lid_ctrl.png) 
