@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Open Lab Frame  </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./static/Logo/favicon.ico" />
+<link rel="icon" type="image/png" href="./static/Logo/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="./static/Logo/favicon-16x16.png" sizes="16x16" />
+
+    <link href="./static/style.css" rel="stylesheet">
+        </head>
+<body>
+<header class="site-header">
+    <div class="wrapper">
+        <div class=header-text>
+   
+    <h1 class="site-title">Open Lab Frame  </h1>
+   
+    <p class="author">by MEP (Multi-Engineering Platform)</p>
+    <p class="affiliation">CENTURI (Turing Centre for Living Systems)</p>
+</div>
+            </div>
+</header>
+<div class="page-content">
+            <div>
+            <nav class="sidebar">
+                <a href="#" class="menu-icon">
+                <svg viewBox="0 0 18 15">
+                    <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                    <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                    <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+                </svg>
+                </a>
+                <ul class="nav-list">
+                <li>
+    <a class="navhome" href="./">
+        Open Lab Frame  
+    </a>
+</li>
+<li class="not-active">
+    <a class="not-active" href="./index_BOM.html">
+        Bill of Materials
+    </a>
+    </li>
+<li class="not-active">
+    <a class="not-active" href="./psu_control.html">
+        Power Suply Unit and control box
+    </a>
+    </li>
+<li class="active">
+    <a class="active" href="./arduino_cncshield.html">
+        Update Arduino board and CNC shield
+    </a>
+    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="wrapper">
+    <h1 id="update-arduino-board-and-cnc-shield">Update Arduino board and CNC shield</h1>
+<p>This is what the CNC shield should look like. Make sure :<br />
+* It is powered (wires on the bottom left of the image, connected to the PSU);
+* The emergency button is connected (wires on the bottom right of the image);
+* The A4899 stepper drivers are plugged corretly (potentiometer directed toward the bottom of the CNC shield).
+* The Arduino Uno is connected to a computer. Not necesserly the RPi, you can connect it to another computer if you feel more confortable to upload Grbl and test the CNC shield.</p>
+<h2 class="page-step" id="upload-the-firmware--grbl">Step 1: Upload the firmware : Grbl</h2>
+<p>To upload Grbl on the [Arduino board], just follow instructions available on <a href="https://github.com/gnea/grbl/wiki/Compiling-Grbl" target="_blank" title="">Grbl's wiki </a>.  </p>
+<p>Now according to the number of axis you want, you will have a few changes to make on the <code>config.h</code> file located in <code>Arduino&gt;libraries&gt;grbl</code>. Open it with a text editor, then read from line 90 to 113.
+Examples:
+* Just X and Y axis ? Comment lines 105 and 106, and uncomment line 110 as follow:<br />
+<em>105 : // #define HOMING_CYCLE_1 ((1&lt;&lt;X_AXIS)|(1&lt;&lt;Y_AXIS))  // OPTIONAL: Then move X,Y at the same time.</em><br />
+<em>106 : // #define HOMING_CYCLE_2                         // OPTIONAL: Uncomment and add axes mask to enable</em><br />
+<em>110 : #define HOMING_CYCLE_0 ((1&lt;&lt;X_AXIS)|(1&lt;&lt;Y_AXIS))  // NOT COMPATIBLE WITH COREXY: Homes both X-Y in one cycle.</em><br />
+<em> Just X and Z axis in this order ? Modify lines 105 and 106 as follow:<br />
+</em>105 : #define HOMING_CYCLE_0 (1&lt;&lt;X_AXIS)                // Move X first.<em> 
+</em>106 : #define HOMING_CYCLE_1 (1&lt;&lt;Z_AXIS) // Then move Z.*<br />
+Then compile and flash Grbl to the Arduino, from the Arduino IDE : <code>File&gt;Examples&gt;grbl&gt;grblUpload</code>.  </p>
+<p>Once Grbl is compiled and flashed to the Arduino board, it is a good idea to have default settings in a first place. Open the Serial Monitor in the Arduino IDE (Tools &gt; Serial Monitor), then check Grbl settings typing <code>$$</code> then Enter, into the Serial Monitor. The settings should look like this (according to <a href="https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration" target="_blank" title="">Grbl wiki : Grbl v1.1 Configuration</a>) :  </p>
+<pre>
+Settings and sample values  Description
+$0=10   Step pulse, microseconds
+$1=25   Step idle delay, milliseconds
+$2=0    Step port invert, mask
+$3=0    Direction port invert, mask
+$4=0    Step enable invert, boolean
+$5=0    Limit pins invert, boolean
+$6=0    Probe pin invert, boolean
+$10=1   Status report, mask
+$11=0.010   Junction deviation, mm
+$12=0.002   Arc tolerance, mm
+$13=0   Report inches, boolean
+<b style="color:green">$20=0    Soft limits, boolean</b>
+<b style="color:green">$21=0    Hard limits, boolean</b>
+$22=1   Homing cycle, boolean
+<b style="color:green">$23=0    Homing dir invert, mask</b>
+$24=25.000  Homing feed, mm/min
+$25=500.000     Homing seek, mm/min
+$26=250     Homing debounce, milliseconds
+$27=1.000   Homing pull-off, mm
+$30=1000.   Max spindle speed, RPM
+$31=0.  Min spindle speed, RPM
+$32=0   Laser mode, boolean
+<b style="color:green">$100=250.000     X steps/mm
+$101=250.000    Y steps/mm
+$102=250.000    Z steps/mm
+$110=500.000    X Max rate, mm/min
+$111=500.000    Y Max rate, mm/min
+$112=500.000    Z Max rate, mm/min
+$120=10.000     X Acceleration, mm/sec^2
+$121=10.000     Y Acceleration, mm/sec^2
+$122=10.000     Z Acceleration, mm/sec^2
+$130=200.000    X Max travel, mm
+$131=200.000    Y Max travel, mm
+$132=200.000    Z Max travel, mm</b>
+</pre>
+<p>If not, then copy each line, and paste it into the Serial Monitor.  </p>
+<h2 class="page-step" id="try-with-the-stepper-motors">Step 2: Try with the stepper motors</h2>
+<p>Now it is a good idea to plug all the stepper motors, then check if they run as expected. To do so, run the following commands into the serial monitor: 
+* G91; This command set all axis to relative. I find it better to test the CNC shield, so you can run many times the same command.
+* G0 X10 Y10 Z10; G0 means 'rapide move' and X10 means 'move 10 mm on X axis'.</p>
+<h3 id="with-4-motors">With 4 motors</h3>
+<ul>
+<li>You can use the 4rth motor as a clone of another axis. In this case, just add 2 jumpers on X, Y or Z line as on the following picture.</li>
+<li>You can also use the 4rth motor independantly. In this case, add 2 jumpers on the last line after the X, Y and Z lines (as seen below).</li>
+</ul>
+<h3 id="inverse-motor-direction">Inverse motor direction</h3>
+<p>There are 2 possibilities:
+* Rotate the connector to 180°;
+* OR connect a 5V pin to the DIR pin of interest.</p>
+<hr />
+<p><a href="psu_control.html">Previous page</a></p>
+    </div>
+</div>
+<footer class="site-footer">
+    <div class="wrapper">
+        <a target="_blank" rel="noopener noreferrer" href="https://gitbuilding.io">
+    <img class="icon" src="./static/Logo/GitBuilding500x.png" alt="GitBuilding logo">
+    <span class="info">Documentation powered by GitBuilding</span>
+</a>
+    <p class="author">©2022 MEP (Multi-Engineering Platform)</p>
+    <p class="email">Contact: <a href="mailto:engineering@centuri-livingsystems.org">engineering@centuri-livingsystems.org</a></p>
+
+    </div>
+</footer></body>
+</html>

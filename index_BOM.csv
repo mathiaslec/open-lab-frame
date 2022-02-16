@@ -1,12 +1,21 @@
 Name in documentation	Qty	Full Name	Supplier 1	Part No	Link	Supplier 2	Part No	Link
-3D printed M2x10mm spacers	8							
-3D printed M3 spacers	4							
 3D printed attaches	8							
 3D printed feet	4							
+3D printed M2x10mm spacers	8							
+3D printed M3 spacers	4							
 5 mm PMMA sheets	2	5 mm PMMA sheet	Polydis	PMAGS505	https://www.polydis.fr/pmma-coule-incolore-500x500x5-mm-c2x30047366	A4	PLMXT-5-500X500-TS	https://www.a4.fr/pmma-extrude-transparent-5-500-x-500.html
 60W CO2 laser cutter	1	60W CO2 laser cutter	Jamp78	JA55	http://www.jamp78.fr/			
 Arduino board	1	Arduino board	Conrad	https://www.conrad.fr/p/carte-compatible-joy-it-arduino-uno-r3-dip-joy-it-atmega328-1-pcs-1456485	1456485			
+blue cable	45 cm	Blue cable	Conrad	1524778	https://www.conrad.fr/p/helukabel-64125-fil-de-cablage-h07v2-k-1-x-150-mm-bleu-marchandise-vendue-au-metre-1524778			
+brown cable	45 cm	Brown cable	Conrad	1428445	https://www.conrad.fr/p/helukabel-200200bn-fil-de-cablage-h07v-k-1-x-150-mm-marron-marchandise-vendue-au-metre-1428445			
+cables	35 cm	Cable for CNC shield powering	Conrad	1572357	https://www.conrad.fr/p/fil-de-cablage-liy-z-tru-components-sh1998c508-1572357-2-x-2-mm-rouge-noir-10-m-1572357			
 CNC shield	1	CNC Shield	Conrad	1646889	https://www.conrad.fr/p/joy-it-ard-cnc-kit1-convient-pour-cartes-arduino-arduino-uno-1-pcs-1646889			
+crimp connectors	3	Crimp connectors	Conrad	1661654	https://www.conrad.fr/p/tru-components-tc-6646616-assortiment-de-cosses-a-sertir-050-mm-150-mm-rouge-140-pcs-1661654			
+crimping pliers	1	Crimping pliers	Conrad	844519	https://www.conrad.fr/p/bruder-mannesmann-m-1092-s-pince-a-sertir-pour-connecteurs-enfichables-isoles-15-a-6-mm-844519			
+emergency button	1	Emergency Button	Conrad	1233789	https://www.conrad.fr/p/deca-a20b-v4e30r-arret-durgence-avec-element-de-contact-240-vac-6-a-3-no-t-ip65-1-pcs-1233789			
+fan	1	fan	Conrad	2147488	https://www.conrad.fr/p/sunon-ventilateur-axial-5-vdc-1394-mh-l-x-l-x-h-40-x-40-x-10-mm-2147488			
+ferrules	13	Ferrules	Conrad	1564522	https://www.conrad.fr/p/assortiment-dembouts-simples-tru-components-e400fs-739872-050-mm-250-mm-blanc-bleu-rouge-noir-gris-400-pcs-1564522			
+glue for acrylic sheets	1	Acrylic glue	Conrad	539813	https://www.conrad.fr/p/adhesif-pour-verre-acrylique-539813-100-g-539813			
 M2 nuts	8	M2 nuts	Conrad	888114	https://www.conrad.fr/p/toolcraft-888114-ecrou-hexagonal-m2-din-934-acier-inoxydable-a2-10-pcs-888114			
 M2x20 mm screws	4	M2x20mm screws	Conrad	1790638	https://www.conrad.fr/p/toolcraft-to-5371914-vis-cylindrique-m2-20-mm-6-pans-interieurs-iso-4762-acier-inoxydable-a2-100-pcs-1790638			
 M3 nuts	22	M3 nuts	Conrad	131880	https://www.conrad.fr/p/toolcraft-131880-ecrou-hexagonal-m3-din-934-acier-100-pcs-131880			
@@ -14,19 +23,10 @@ M3x10mm screws	16	M3x10mm screws	Conrad	1062107	https://www.conrad.fr/p/vis-cyli
 M3x18mm screws	8	M3x18mm screws	Conrad	1790655	https://www.conrad.fr/p/toolcraft-to-5371965-vis-cylindrique-m3-18-mm-6-pans-interieurs-iso-4762-acier-inoxydable-a2-100-pcs-1790655			
 M3x8mm screws	8	M3x8mm screws	Conrad	1061818	https://www.conrad.fr/p/vis-cylindrique-toolcraft-1061818-100-pcs-m3-8-mm-tete-cylindrique-6-pans-interieurs-acier-inoxydable-na-1061818			
 M4x10mm screws	4	M4x10mm screws	Conrad	839709	https://www.conrad.fr/p/vis-cylindrique-toolcraft-839709-100-pcs-m4-10-mm-tete-cylindrique-6-pans-interieurs-acier-inoxydable-na-839709			
+masking tape	1	Masking tape	Conrad	2266109	https://www.conrad.fr/p/3m-5011850-5011850-ruban-de-masquage-beige-l-x-l-50-m-x-18-mm-1-pcs-2266109			
 PSU for CNC shield and motors	1	2725-LM200-10B12-ND PSU	Digikey	2725-LM200-10B12-ND	https://www.digikey.fr/fr/products/detail/mornsun-america-llc/LM200-10B12/13968702			
 PSU for RaspberryPi	1	LM35-10D0512-10 PSU	Digikey	2725-LM35-10D0512-10-ND	https://www.digikey.fr/fr/products/detail/mornsun-america-llc/LM35-10D0512-10/13968639			
 RaspberryPi	1	RaspberryPi	Conrad	2138863	https://www.conrad.fr/p/raspberry-pi-4-b-2-gb-4-x-15-ghz-2138863			
-blue cable	45 cm	Blue cable	Conrad	1524778	https://www.conrad.fr/p/helukabel-64125-fil-de-cablage-h07v2-k-1-x-150-mm-bleu-marchandise-vendue-au-metre-1524778			
-brown cable	45 cm	Brown cable	Conrad	1428445	https://www.conrad.fr/p/helukabel-200200bn-fil-de-cablage-h07v-k-1-x-150-mm-marron-marchandise-vendue-au-metre-1428445			
-cables	35 cm	Cable for CNC shield powering	Conrad	1572357	https://www.conrad.fr/p/fil-de-cablage-liy-z-tru-components-sh1998c508-1572357-2-x-2-mm-rouge-noir-10-m-1572357			
-crimp connectors	3	Crimp connectors	Conrad	1661654	https://www.conrad.fr/p/tru-components-tc-6646616-assortiment-de-cosses-a-sertir-050-mm-150-mm-rouge-140-pcs-1661654			
-crimping pliers	1	Crimping pliers	Conrad	844519	https://www.conrad.fr/p/bruder-mannesmann-m-1092-s-pince-a-sertir-pour-connecteurs-enfichables-isoles-15-a-6-mm-844519			
-emergency button	1	Emergency Button	Conrad	1233789	https://www.conrad.fr/p/deca-a20b-v4e30r-arret-durgence-avec-element-de-contact-240-vac-6-a-3-no-t-ip65-1-pcs-1233789			
-fan	1	fan	Conrad	2147488	https://www.conrad.fr/p/sunon-ventilateur-axial-5-vdc-1394-mh-l-x-l-x-h-40-x-40-x-10-mm-2147488			
-ferrules	13	Ferrules	Conrad	1564522	https://www.conrad.fr/p/assortiment-dembouts-simples-tru-components-e400fs-739872-050-mm-250-mm-blanc-bleu-rouge-noir-gris-400-pcs-1564522			
-glue for acrylic sheets	1	Acrylic glue	Conrad	539813	https://www.conrad.fr/p/adhesif-pour-verre-acrylique-539813-100-g-539813			
-masking tape	1	Masking tape	Conrad	2266109	https://www.conrad.fr/p/3m-5011850-5011850-ruban-de-masquage-beige-l-x-l-50-m-x-18-mm-1-pcs-2266109			
 these wires	2	Wires to power RPi	Conrad	1570820	https://www.conrad.fr/p/cordon-fil-a-carte-assemble-nombre-total-de-poles-2-741213-pas-254-mm-1-pcs-1570820			
 touch screen	1	Touch Screen	Conrad	1503822	https://www.conrad.fr/p/module-ecran-tactile-joy-it-rb-lcd5-127-cm-5-pouces-800-x-480-pixel-convient-pour-raspberry-pi-avec-stylet-1-pcs-1503822			
 yellow cable	45 cm	Yellow/Green cable	Conrad	1428446	https://www.conrad.fr/p/helukabel-200200gnge-fil-de-cablage-h07v-k-1-x-150-mm-jaune-vert-marchandise-vendue-au-metre-1428446			

@@ -150,6 +150,14 @@ th {
   width: 64px;
 }
 
+.smallicon {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 24px;
+    vertical-align: middle;
+    width: 24px;
+  }
+
 .header-buttons{
   float:right;
 }
@@ -319,6 +327,127 @@ nav {
     display: block;
     padding-bottom: 5px;
   }
+}
+
+.pagebom {
+    margin: 10px 0;
+    padding: 0 20px;
+    border: 1px solid #535353;
+    border-radius: 3px;
+}
+
+.caution-block {
+    background-color: #fdd0ab;
+    padding: 0 40px 0 60px;
+    border: 1px solid #d46000;
+    border-radius: 3px;
+    background-image: url(Icons/caution.png);
+    background-repeat: no-repeat;
+    background-position: 12px 10px;
+}
+
+.caution-block strong{
+    color: #d46000;
+}
+
+.warning-block {
+    background-color: #fcc;
+    padding: 0 40px 0 60px;
+    border: 1px solid #c00;
+    border-radius: 3px;
+    background-image: url(Icons/warning.png);
+    background-repeat: no-repeat;
+    background-position: 12px 10px;
+}
+
+.warning-block strong{
+    color: #c00;
+}
+
+.info-block {
+    background-color: #ccf;
+    padding: 0 40px 0 60px;
+    border: 1px solid #00c;
+    border-radius: 3px;
+    background-image: url(Icons/info.png);
+    background-repeat: no-repeat;
+    background-position: 12px 10px;
+}
+
+.info-block strong{
+    color: #00c;
+}
+
+.help-block {
+    background-color: #ccf;
+    padding: 0 40px 0 60px;
+    border: 1px solid #00c;
+    border-radius: 3px;
+    background-image: url(Icons/help.png);
+    background-repeat: no-repeat;
+    background-position: 12px 10px;
+}
+
+.help-block strong{
+    color: #00c;
+}
+
+
+/**
+ * Details header
+ */
+ .details-header:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.details-header{
+  border: 1px solid #aaa;
+  display: flex;
+  background-color: #ecd2cd;
+}
+.details-thumb-outer{
+    flex-basis: 35%;
+    float: left;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    flex-grow: 1;
+}
+
+.details-thumb{
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  height: 100%;
+}
+
+.details-thumb img {
+  box-sizing: border-box;
+  max-height: 30vh;
+  object-fit: contain;
+  padding: 0;
+  width: 100%;
+}
+
+.other-details{
+  flex-basis: 65%;
+  box-sizing: border-box;
+  float: left;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-grow: 1;
+}
+
+.detail{
+  border: 1px solid #aaa;
+  box-sizing: content-box;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
 }
 
 .gb3dviewer {

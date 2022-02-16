@@ -49,6 +49,11 @@
         Power Suply Unit and control box
     </a>
     </li>
+<li class="not-active">
+    <a class="not-active" href="./arduino_cncshield.html">
+        Update Arduino board and CNC shield
+    </a>
+    </li>
 
                 </ul>
             </nav>
@@ -116,9 +121,9 @@ Strip the cables on about 10 mm (for example with <a href="Parts/crimpingPliers.
 </div>
 <div class="gallery-show"><img id="gallery-show5" src="images/fan.png" alt=""/></div>
 <p>Attach the <a href="Parts/fan.html">fan</a> with 4x <a href="Parts/M3x18mm.html">M3x18mm screws</a> and <a href="Parts/M3nut.html">M3 nuts</a>.</p>
-<h2 id="separation-between-psu-and-ctrl">Separation between PSU and CTRL</h2>
+<h2 class="page-step" id="separation-between-psu-and-ctrl">Step 8: Separation between PSU and CTRL</h2>
 <p><img alt="" src="images/separation_psu.png" title="" /> </p>
-<h2 id="control-raspberrypi">Control : RaspberryPi</h2>
+<h2 class="page-step" id="control--raspberrypi">Step 9: Control : RaspberryPi</h2>
 <div class="gallery-thumb">
     <img onmouseover="getElementById('gallery-show6').src=this.src" src="images/rpi.png" alt="" />
     <img onmouseover="getElementById('gallery-show6').src=this.src" src="images/rpi_at1.png" alt="" />
@@ -130,7 +135,7 @@ Strip the cables on about 10 mm (for example with <a href="Parts/crimpingPliers.
 </div>
 <div class="gallery-show"><img id="gallery-show6" src="images/rpi.png" alt=""/></div>
 <p>Attach the <a href="Parts/RPi.html">RaspberryPi</a> with 4x <a href="Parts/M2x20mm.html">M2x20 mm screws</a> and 4x <a href="Parts/M2nut.html">M2 nuts</a>, adding 4x <a href="files/stl/M2_spacer.html">3D printed M2x10mm spacers</a>. Finally, connect the RPi to the <a href="Parts/PSU1.html">PSU for RaspberryPi</a> with <a href="Parts/RPiWires.html">these wires</a>.</p>
-<h2 id="control-arduino">Control : Arduino</h2>
+<h2 class="page-step" id="control--arduino">Step 10: Control : Arduino</h2>
 <div class="gallery-thumb">
     <img onmouseover="getElementById('gallery-show7').src=this.src" src="images/arduino.png" alt="" />
     <img onmouseover="getElementById('gallery-show7').src=this.src" src="images/arduino_at.png" alt="" />
@@ -138,7 +143,7 @@ Strip the cables on about 10 mm (for example with <a href="Parts/crimpingPliers.
 </div>
 <div class="gallery-show"><img id="gallery-show7" src="images/arduino.png" alt=""/></div>
 <p>Beside the RaspberryPi, attach the <a href="Parts/Arduino.html">Arduino board</a> with 4x <a href="Parts/M2x20mm.html">M2x20 mm screws</a> and 4x <a href="Parts/M2nut.html">M2 nuts</a>, adding 4x <a href="files/stl/M2_spacer.html">3D printed M2x10mm spacers</a>.</p>
-<h2 id="cnc-shield">CNC shield</h2>
+<h2 class="page-step" id="cnc-shield">Step 11: CNC shield</h2>
 <div class="gallery-thumb">
     <img onmouseover="getElementById('gallery-show8').src=this.src" src="images/cncshield.png" alt="" />
     <img onmouseover="getElementById('gallery-show8').src=this.src" src="images/cncshield_cable.png" alt="" />
@@ -147,21 +152,20 @@ Strip the cables on about 10 mm (for example with <a href="Parts/crimpingPliers.
 </div>
 <div class="gallery-show"><img id="gallery-show8" src="images/cncshield.png" alt=""/></div>
 <p>Cut 35 cm of <a href="Parts/CNCCable.html">cables</a>, strip it on 10 mm with the <a href="Parts/crimpingPliers.html">crimping pliers</a>, then add the <a href="Parts/ferrules.html">ferrules</a>.<br />
-Plug the <a href="Parts/CNCShield.html">CNC shield</a> onto the <a href="Parts/Arduino.html">Arduino board</a>.<br />
+Plug the <a href="Parts/CNCShield.html">CNC shield</a> onto the <a href="Parts/Arduino.html">Arduino board</a>. Make sure to plug the A4899 drivers correctly on the CNC shield.<br />
 Make sure you connect the black wire to -Vo on the <a href="Parts/PSU2.html">PSU for CNC shield and motors</a>, and red wire to +Vo. The similarly connect the red wire to + on the <a href="Parts/CNCShield.html">CNC shield</a>, and black wire to -.</p>
-<h2 id="psu-lid">PSU lid</h2>
+<h2 class="page-step" id="psu-lid">Step 12: PSU lid</h2>
 <div class="gallery-thumb">
     <img onmouseover="getElementById('gallery-show9').src=this.src" src="images/psu_lid.png" alt="" />
     <img onmouseover="getElementById('gallery-show9').src=this.src" src="images/emergency_button.png" alt="" />
     <img onmouseover="getElementById('gallery-show9').src=this.src" src="images/lid_at.png" alt="" />
     <img onmouseover="getElementById('gallery-show9').src=this.src" src="images/emergency_button_wires.png" alt="" />
     <img onmouseover="getElementById('gallery-show9').src=this.src" src="images/lid-psu_box.png" alt="" />
-    <img onmouseover="getElementById('gallery-show9').src=this.src" src="images/lid-psu_box_at.png" alt="" />
 </div>
 <div class="gallery-show"><img id="gallery-show9" src="images/psu_lid.png" alt=""/></div>
 <p>Attach the <a href="Parts/EmergencyButton.html">emergency button</a> to the PSU lid. Connect <a href="Parts/RPiWires.html">these wires</a> to the emergency button, then to the CNC shield, on "E-STOP" pins.<br />
 Then fix 4x <a href="files/stl/lid_attach.html">3D printed attaches</a> with <a href="Parts/M3x10mm.html">M3x10mm screws</a> and <a href="Parts/M3nut.html">M3 nuts</a>.</p>
-<h2 id="control-lid">Control lid</h2>
+<h2 class="page-step" id="control-lid">Step 13: Control lid</h2>
 <div class="gallery-thumb">
     <img onmouseover="getElementById('gallery-show10').src=this.src" src="images/lid_ctrl.png" alt="" />
     <img onmouseover="getElementById('gallery-show10').src=this.src" src="images/screen_at.png" alt="" />
@@ -170,51 +174,20 @@ Then fix 4x <a href="files/stl/lid_attach.html">3D printed attaches</a> with <a 
 <div class="gallery-show"><img id="gallery-show10" src="images/lid_ctrl.png" alt=""/></div>
 <p>Attach 4x <a href="files/stl/lid_attach.html">3D printed attaches</a> on the control lid, with <a href="Parts/M3x10mm.html">M3x10mm screws</a> and <a href="Parts/M3nut.html">M3 nuts</a>.
 Then attach the <a href="Parts/TouchScreen.html">touch screen</a> with 4x <a href="Parts/M3nut.html">M3 nuts</a>, 4x <a href="Parts/M3x18mm.html">M3x18mm screws</a> and 4x <a href="files/stl/M3_spacer.html">3D printed M3 spacers</a>.</p>
-<h2 id="close-the-box">Close the box</h2>
-<p>If you want to close the box, then you will need 8x <a href="Parts/M3x10mm.html">M3x10mm screws</a> and <a href="Parts/M3nut.html">M3 nuts</a> more.</p>
-<h2 class="page-step" id="upload-the-firmware--grbl">Step 8: Upload the firmware : Grbl</h2>
-<p>To upload Grbl on the <a href="Parts/Arduino.html">Arduino board</a>, just follow instructions available on <a href="https://github.com/gnea/grbl/wiki/Compiling-Grbl" title="">Grbl's wiki </a>.  </p>
-<p>Once Grbl is compiled and flashed to the Arduino board, it is a good idea to have default settings in a first place. Open the Serial Monitor in the Arduino IDE (Tools &gt; Serial Monitor), then check Grbl settings typing <code>$$</code> then Enter, into the Serial Monitor. The settings should look like this (according to <a href="https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration" title="">Grbl wiki : Grbl v1.1 Configuration</a>) :  </p>
-<div class="codehilite"><pre><span></span><code>Settings and sample values  Description
-$0=10   Step pulse, microseconds
-$1=25   Step idle delay, milliseconds
-$2=0    Step port invert, mask
-$3=0    Direction port invert, mask
-$4=0    Step enable invert, boolean
-$5=0    Limit pins invert, boolean
-$6=0    Probe pin invert, boolean
-$10=1   Status report, mask
-$11=0.010   Junction deviation, mm
-$12=0.002   Arc tolerance, mm
-$13=0   Report inches, boolean
-$20=0   Soft limits, boolean
-$21=0   Hard limits, boolean
-$22=1   Homing cycle, boolean
-$23=0   Homing dir invert, mask
-$24=25.000  Homing feed, mm/min
-$25=500.000     Homing seek, mm/min
-$26=250     Homing debounce, milliseconds
-$27=1.000   Homing pull-off, mm
-$30=1000.   Max spindle speed, RPM
-$31=0.  Min spindle speed, RPM
-$32=0   Laser mode, boolean
-$100=250.000    X steps/mm
-$101=250.000    Y steps/mm
-$102=250.000    Z steps/mm
-$110=500.000    X Max rate, mm/min
-$111=500.000    Y Max rate, mm/min
-$112=500.000    Z Max rate, mm/min
-$120=10.000     X Acceleration, mm/sec^2
-$121=10.000     Y Acceleration, mm/sec^2
-$122=10.000     Z Acceleration, mm/sec^2
-$130=200.000    X Max travel, mm
-$131=200.000    Y Max travel, mm
-$132=200.000    Z Max travel, mm
-</code></pre></div>
-
-<p>If not, then copy each line, and paste it into the Serial Monitor.</p>
+<h2 class="page-step" id="close-the-box">Step 14: Close the box</h2>
+<p><img alt="" src="images/lid-psu_box_at.png" title="" /> 
+If you want to close the box, then you will need 8x <a href="Parts/M3x10mm.html">M3x10mm screws</a> and <a href="Parts/M3nut.html">M3 nuts</a> more.</p>
+<h2 id="connect-everything">Connect everything</h2>
+<ul>
+<li>Connect the RaspberryPi to the Arduino board with a USB cable;</li>
+<li>Connect the RaspberryPi the the screen with an HDMI cable (micro-HDMI connector for the RPi4);</li>
+<li>Connect the RaspberryPi to the screen with a micro-USB cable (for touch screen)</li>
+<li>OPTIONAL : connect a mouse to the RaspberryPi;</li>
+<li>OPTIONAL : connect a keyboard to the RaspberryPi;</li>
+<li>OPTIONAL : connect a bigger monitor to the RaspberryPi.</li>
+</ul>
 <hr />
-<p><a href="index_BOM.html">Previous page</a></p>
+<p><a href="index_BOM.html">Previous page</a> | <a href="arduino_cncshield.html">Next page</a></p>
     </div>
 </div>
 <footer class="site-footer">
