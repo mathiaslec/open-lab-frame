@@ -4,6 +4,7 @@ Modular  = XYZ size of the frame + different heads (camera, pipette or anything 
 
 You should link to a couple of pages:
 
-* [PSU & control box](psu_control.md){step}
+* [Make the PSU & CTRL box](psu_control.md){step}
+* [Update Arduino board & CNC shield](arduino_cncshield.md){step}
 
 And you should definitely let people know about the [bill of materials]{BOM} page.

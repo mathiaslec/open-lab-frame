@@ -55,11 +55,11 @@ Strip the cables on about 10 mm (for example with [crimping pliers](Parts.yaml#c
 ![](images/fan_psu.png) 
 Attach the [fan](Parts.yaml#fan){qty:1} with 4x [M3x18mm screws](Parts.yaml#M3x18mm){qty:4} and [M3 nuts](Parts.yaml#M3nut){qty:4}.
 
-## Separation between PSU and CTRL
+## Separation between PSU and CTRL {pagestep}
 ![](images/separation_psu.png) 
 
 
-## Control : RaspberryPi
+## Control : RaspberryPi {pagestep}
 ![](images/rpi.png) 
 ![](images/rpi_at1.png) 
 ![](images/rpi_at2.png) 
@@ -69,84 +69,50 @@ Attach the [fan](Parts.yaml#fan){qty:1} with 4x [M3x18mm screws](Parts.yaml#M3x1
 ![](images/rpi_power.png) 
 Attach the [RaspberryPi](Parts.yaml#RPi){qty:1} with 4x [M2x20 mm screws](Parts.yaml#M2x20mm){qty:2} and 4x [M2 nuts](Parts.yaml#M2nut){qty:4}, adding 4x [3D printed M2x10mm spacers](files/stl/M2_spacer.stl){qty:4}. Finally, connect the RPi to the [PSU for RaspberryPi] with [these wires](Parts.yaml#RPiWires){qty:1}.
 
-## Control : Arduino
+## Control : Arduino {pagestep}
 ![](images/arduino.png) 
 ![](images/arduino_at.png) 
 ![](images/arduino_rpi.png) 
 Beside the RaspberryPi, attach the [Arduino board](Parts.yaml#Arduino){qty:1} with 4x [M2x20 mm screws](Parts.yaml#M2x20mm){qty:2} and 4x [M2 nuts](Parts.yaml#M2nut){qty:4}, adding 4x [3D printed M2x10mm spacers](files/stl/M2_spacer.stl){qty:4}.
 
-## CNC shield
+## CNC shield {pagestep}
 ![](images/cncshield.png) 
 ![](images/cncshield_cable.png) 
 ![](images/cncshield_psu.png) 
 ![](images/cncshield_power.png) 
 Cut 35 cm of [cables](Parts.yaml#CNCCable){qty:"35 cm"}, strip it on 10 mm with the [crimping pliers], then add the [ferrules]{qty:4}.  
-Plug the [CNC shield](Parts.yaml#CNCShield){qty:1} onto the [Arduino board].  
+Plug the [CNC shield](Parts.yaml#CNCShield){qty:1} onto the [Arduino board]. Make sure to plug the A4899 drivers correctly on the CNC shield.  
 Make sure you connect the black wire to -Vo on the [PSU for CNC shield and motors], and red wire to +Vo. The similarly connect the red wire to + on the [CNC shield], and black wire to -.
 
-## PSU lid
+## PSU lid {pagestep}
 ![](images/psu_lid.png) 
 ![](images/emergency_button.png) 
 ![](images/lid_at.png) 
 ![](images/emergency_button_wires.png) 
 ![](images/lid-psu_box.png) 
-![](images/lid-psu_box_at.png) 
 
 Attach the [emergency button](Parts.yaml#EmergencyButton){qty:1} to the PSU lid. Connect [these wires]{qty:1} to the emergency button, then to the CNC shield, on "E-STOP" pins.  
 Then fix 4x [3D printed attaches](files/stl/lid_attach.stl){qty:4} with [M3x10mm screws](Parts.yaml#M3x10mm){qty:4} and [M3 nuts]{qty:4}.
 
-## Control lid
+## Control lid {pagestep}
 ![](images/lid_ctrl.png) 
 ![](images/screen_at.png) 
 ![](images/lid_at2.png) 
 Attach 4x [3D printed attaches]{qty:4} on the control lid, with [M3x10mm screws]{qty:4} and [M3 nuts]{qty:4}.
 Then attach the [touch screen](Parts.yaml#TouchScreen){qty:1} with 4x [M3 nuts]{qty:4}, 4x [M3x18mm screws]{qty:4} and 4x [3D printed M3 spacers](files/stl/M3_spacer.stl){qty:4}.
 
-## Close the box
+## Close the box {pagestep}
+![](images/lid-psu_box_at.png) 
 If you want to close the box, then you will need 8x [M3x10mm screws]{qty:8} and [M3 nuts] more.
 
-## Upload the firmware : Grbl {pagestep}
-To upload Grbl on the [Arduino board], just follow instructions available on [Grbl's wiki ](https://github.com/gnea/grbl/wiki/Compiling-Grbl).  
+## Connect everything
+* Connect the RaspberryPi to the Arduino board with a USB cable;
+* Connect the RaspberryPi the the screen with an HDMI cable (micro-HDMI connector for the RPi4);
+* Connect the RaspberryPi to the screen with a micro-USB cable (for touch screen)
+* OPTIONAL : connect a mouse to the RaspberryPi;
+* OPTIONAL : connect a keyboard to the RaspberryPi;
+* OPTIONAL : connect a bigger monitor to the RaspberryPi.
 
-Once Grbl is compiled and flashed to the Arduino board, it is a good idea to have default settings in a first place. Open the Serial Monitor in the Arduino IDE (Tools > Serial Monitor), then check Grbl settings typing `$$` then Enter, into the Serial Monitor. The settings should look like this (according to [Grbl wiki : Grbl v1.1 Configuration](https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration)) :  
-```
-Settings and sample values 	Description
-$0=10 	Step pulse, microseconds
-$1=25 	Step idle delay, milliseconds
-$2=0 	Step port invert, mask
-$3=0 	Direction port invert, mask
-$4=0 	Step enable invert, boolean
-$5=0 	Limit pins invert, boolean
-$6=0 	Probe pin invert, boolean
-$10=1 	Status report, mask
-$11=0.010 	Junction deviation, mm
-$12=0.002 	Arc tolerance, mm
-$13=0 	Report inches, boolean
-$20=0 	Soft limits, boolean
-$21=0 	Hard limits, boolean
-$22=1 	Homing cycle, boolean
-$23=0 	Homing dir invert, mask
-$24=25.000 	Homing feed, mm/min
-$25=500.000 	Homing seek, mm/min
-$26=250 	Homing debounce, milliseconds
-$27=1.000 	Homing pull-off, mm
-$30=1000. 	Max spindle speed, RPM
-$31=0. 	Min spindle speed, RPM
-$32=0 	Laser mode, boolean
-$100=250.000 	X steps/mm
-$101=250.000 	Y steps/mm
-$102=250.000 	Z steps/mm
-$110=500.000 	X Max rate, mm/min
-$111=500.000 	Y Max rate, mm/min
-$112=500.000 	Z Max rate, mm/min
-$120=10.000 	X Acceleration, mm/sec^2
-$121=10.000 	Y Acceleration, mm/sec^2
-$122=10.000 	Z Acceleration, mm/sec^2
-$130=200.000 	X Max travel, mm
-$131=200.000 	Y Max travel, mm
-$132=200.000 	Z Max travel, mm
-```
-If not, then copy each line, and paste it into the Serial Monitor.
 
 
   
