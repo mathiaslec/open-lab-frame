@@ -1,4 +1,5 @@
 # Open Lab Frame  
+
 Open Lab Frame is an open source project aiming at building modular and motorized/automated frames.  
 Modular  = XYZ size of the frame + different heads (camera, pipette or anything else)  
 

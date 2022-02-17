@@ -1,3 +1,29 @@
+Jumpers:
+    Name: Jumpers
+    Suppliers:
+        Conrad:
+            PartNo: 737490
+            Link: https://www.conrad.fr/p/shunt-ferme-fischer-elektronik-cab-4-g-s-pole2-pas-254-mm-noir-1-pcs-737490
+
+StepperMotors:
+    Name: Stepper motors (Nema 17)
+    Description: > 
+        The choice of the stepper motors depends on :  
+          
+        - The maximum power provided by the CNC shield and stepper drivers. As explained on Polulu page about A4988 drivers (https://www.pololu.com/product/1182),
+        the maximum current/driver is 2A. Therefore there is no need to buy a stepper with higher nominal current.  
+          
+        - The holding torque needed. As an example, Creality printers have stepper motors with 0.4Nm; Prusa printers about 0.48Nm.  
+    Specs:
+        Torque: Minumum 0.4 Nm
+        Type: Nema 17
+    Suppliers:
+        Conrad:
+            PartNo: 2355876
+            Link: https://www.conrad.fr/p/joy-it-moteur-pas-a-pas-nema17-06-059-nm-2-a-2-a-diametre-de-larbre-5-mm-2355876
+
+
+
 TouchScreen:
     Name: Touch Screen
     Suppliers:

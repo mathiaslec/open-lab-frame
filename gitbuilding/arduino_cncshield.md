@@ -1,5 +1,13 @@
-# Update Arduino board and CNC shield
-This is what the CNC shield should look like. Make sure :  
+# Update Arduino board and CNC shield  
+>i **Note**  
+>i In the following section we will consider the CNC shiled is used to move 4 motors on axis X, Y and Z, with a clone on Z axis (therefore 2 motors for Z axis).
+    
+This is what the CNC shield should look like. 
+  
+![](images/cnc-shield_plugged.png)  
+
+Make sure : 
+
 * It is powered (wires on the bottom left of the image, connected to the PSU);
 * The emergency button is connected (wires on the bottom right of the image);
 * The A4899 stepper drivers are plugged corretly (potentiometer directed toward the bottom of the CNC shield).
@@ -8,16 +16,18 @@ This is what the CNC shield should look like. Make sure :
 ## Upload the firmware : Grbl {pagestep}
 To upload Grbl on the [Arduino board], just follow instructions available on [Grbl's wiki ](https://github.com/gnea/grbl/wiki/Compiling-Grbl).  
 
-Now according to the number of axis you want, you will have a few changes to make on the `config.h` file located in `Arduino>libraries>grbl`. Open it with a text editor, then read from line 90 to 113.
-Examples:
-* Just X and Y axis ? Comment lines 105 and 106, and uncomment line 110 as follow:  
-*105 : // #define HOMING_CYCLE_1 ((1<<X_AXIS)|(1<<Y_AXIS))  // OPTIONAL: Then move X,Y at the same time.*  
-*106 : // #define HOMING_CYCLE_2                         // OPTIONAL: Uncomment and add axes mask to enable*  
-*110 : #define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS))  // NOT COMPATIBLE WITH COREXY: Homes both X-Y in one cycle.*  
-* Just X and Z axis in this order ? Modify lines 105 and 106 as follow:  
-*105 : #define HOMING_CYCLE_0 (1<<X_AXIS)                // Move X first.* 
-*106 : #define HOMING_CYCLE_1 (1<<Z_AXIS) // Then move Z.*  
-Then compile and flash Grbl to the Arduino, from the Arduino IDE : `File>Examples>grbl>grblUpload`.  
+>i **Note**
+>i According to the number of axis you want, you will have a few changes to make on the `config.h` file located in `Arduino>libraries>grbl`. Open it with a text editor, then read from line 90 to 113.  
+>i Examples:
+>i
+>i * **Just X and Y axis ?** Comment lines 105 and 106, and uncomment line 110 as follow:  
+>i *105 : // #define HOMING_CYCLE_1 ((1<<X_AXIS)|(1<<Y_AXIS))  // OPTIONAL: Then move X,Y at the same time.*  
+>i *106 : // #define HOMING_CYCLE_2                         // OPTIONAL: Uncomment and add axes mask to enable*  
+>i *110 : #define HOMING_CYCLE_0 ((1<<X_AXIS)|(1<<Y_AXIS))  // NOT COMPATIBLE WITH COREXY: Homes both X-Y in one cycle.*  
+>i * **Just X and Z axis in this order ?** Modify lines 105 and 106 as follow:    
+>i *105 : #define HOMING_CYCLE_0 (1<<X_AXIS)                // Move X first.*   
+>i *106 : #define HOMING_CYCLE_1 (1<<Z_AXIS) // Then move Z.*    
+>i Then compile and flash Grbl to the Arduino, from the Arduino IDE : `File>Examples>grbl>grblUpload`.  
 
 Once Grbl is compiled and flashed to the Arduino board, it is a good idea to have default settings in a first place. Open the Serial Monitor in the Arduino IDE (Tools > Serial Monitor), then check Grbl settings typing `$$` then Enter, into the Serial Monitor. The settings should look like this (according to [Grbl wiki : Grbl v1.1 Configuration](https://github.com/gnea/grbl/wiki/Grbl-v1.1-Configuration)) :  
 <pre>
@@ -60,17 +70,37 @@ $132=200.000 	Z Max travel, mm</b>
 If not, then copy each line, and paste it into the Serial Monitor.  
 
 ## Try with the stepper motors {pagestep}
-Now it is a good idea to plug all the stepper motors, then check if they run as expected. To do so, run the following commands into the serial monitor: 
-* G91; This command set all axis to relative. I find it better to test the CNC shield, so you can run many times the same command.
-* G0 X10 Y10 Z10; G0 means 'rapide move' and X10 means 'move 10 mm on X axis'.
+Plug the 4x [stepper motors](Parts.yaml#StepperMotors){qty:4}.  
 
-### With 4 motors
-* You can use the 4rth motor as a clone of another axis. In this case, just add 2 jumpers on X, Y or Z line as on the following picture.
-* You can also use the 4rth motor independantly. In this case, add 2 jumpers on the last line after the X, Y and Z lines (as seen below).
+![](images/cnc-shield_motors.png)  
+
+Then check the motors buy running the following commands into the serial monitor:   
+
+`G91; This command set all axis to relative. I find it better to test the CNC shield, so you can run many times the same command.`  
+
+Then:  
+
+`G0 X10 Y10 Z10; G0 means 'rapid move' and X10 means 'move 10 mm on X axis'.`
+
+### Clone the Z axis
+Just add 2x [jumpers](Parts.yaml#Jumpers){qty:2} on the Z axis line (left of the CNC shield, as seen on the picture below).
+
+![](images/cnc-shield_clone-z.png)  
+
+>i **Note**  
+>i 
+>i * You can use the 4rth motor as a clone of X or Y: just place the jumpers on the corresponding line (as seen on the previsou picture).   
+>i * You can also use the 4rth motor independently. In this case, add 2 jumpers on the last line after the X, Y and Z lines.
 
 ### Inverse motor direction
-There are 2 possibilities:
+![](images/cnc-shield_x-backward-jumper.png)    
+![](images/cnc-shield_x-backward-inverse.png)   
+
+As seen on the picture, there are 2 possibilities:
+
 * Rotate the connector to 180°;
-* OR connect a 5V pin to the DIR pin of interest.
+* OR connect a 5V pin to the DIR pin of interest. On the picture above, an orange jumpers wire is connecting 5V to X.DIR.
+
+## Current limitation for stepper drivers
 
 
