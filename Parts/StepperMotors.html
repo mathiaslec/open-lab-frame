@@ -5,11 +5,11 @@
     <title>Open Lab Frame  </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="./static/Logo/favicon.ico" />
-<link rel="icon" type="image/png" href="./static/Logo/favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="./static/Logo/favicon-16x16.png" sizes="16x16" />
+    <link rel="shortcut icon" href="../static/Logo/favicon.ico" />
+<link rel="icon" type="image/png" href="../static/Logo/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="../static/Logo/favicon-16x16.png" sizes="16x16" />
 
-    <link href="./static/style.css" rel="stylesheet">
+    <link href="../static/style.css" rel="stylesheet">
         </head>
 <body>
 <header class="site-header">
@@ -35,23 +35,23 @@
                 </a>
                 <ul class="nav-list">
                 <li>
-    <a class="navhome" href="./">
+    <a class="navhome" href="../">
         Open Lab Frame  
     </a>
 </li>
 <li class="not-active">
-    <a class="not-active" href="./index_BOM.html">
+    <a class="not-active" href="../index_BOM.html">
         Bill of Materials
     </a>
     </li>
 <li class="not-active">
-    <a class="not-active" href="./psu_control.html">
+    <a class="not-active" href="../psu_control.html">
         Power Suply Unit and control box
     </a>
     </li>
 <li class="not-active">
-    <a class="not-active" href="./arduino_cncshield.html">
-        Update Arduino board and CNC shield
+    <a class="not-active" href="../arduino_cncshield.html">
+        Update Arduino board and CNC shield  
     </a>
     </li>
 
@@ -59,14 +59,56 @@
             </nav>
         </div>
         <div class="wrapper">
-    <h1 id="cut-the-pmma-sheets">Cut the PMMA sheets</h1>
-<p>Cut the <a href="Parts/PMMAsheet.html">5 mm PMMA sheets</a>. Files are available with <a href="files/dxf/psu_control_box.dxf" title="">DXF format by clicking here</a>, and the FreeCAD files are availables by clicking here if you want to make any change.</p>
+    <h1 id="stepper-motors-nema-17">Stepper motors (Nema 17)</h1>
+<p>The choice of the stepper motors depends on :  </p>
+<ul>
+<li>
+<p>The maximum power provided by the CNC shield and stepper drivers. As explained on Polulu page about A4988 drivers (https://www.pololu.com/product/1182), the maximum current/driver is 2A. Therefore there is no need to buy a stepper with higher nominal current.  </p>
+</li>
+<li>
+<p>The holding torque needed. As an example, Creality printers have stepper motors with 0.4Nm; Prusa printers about 0.48Nm.  </p>
+</li>
+</ul>
+<h2 id="specifications">Specifications</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Torque</td>
+<td>Minumum 0.4 Nm</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Nema 17</td>
+</tr>
+</tbody>
+</table>
+<h2 id="suppliers">Suppliers</h2>
+<table>
+<thead>
+<tr>
+<th>Supplier</th>
+<th>Part Number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conrad</td>
+<td><a href="https://www.conrad.fr/p/joy-it-moteur-pas-a-pas-nema17-06-059-nm-2-a-2-a-diametre-de-larbre-5-mm-2355876" target="_blank">2355876</a></td>
+</tr>
+</tbody>
+</table>
     </div>
 </div>
 <footer class="site-footer">
     <div class="wrapper">
         <a target="_blank" rel="noopener noreferrer" href="https://gitbuilding.io">
-    <img class="icon" src="./static/Logo/GitBuilding500x.png" alt="GitBuilding logo">
+    <img class="icon" src="../static/Logo/GitBuilding500x.png" alt="GitBuilding logo">
     <span class="info">Documentation powered by GitBuilding</span>
 </a>
     <p class="author">©2022 MEP (Multi-Engineering Platform)</p>
