@@ -60,8 +60,21 @@
         </div>
         <div class="wrapper">
     <h1 id="update-arduino-board-and-cnc-shield">Update Arduino board and CNC shield</h1>
+<div class="pagebom">
+<h3 id="parts">Parts</h3>
+<ul>
+<li>1 <a Class="bom" href="Parts/JumpersWires_FemaleMale.html">female to male jumper wire</a> </li>
+<li>2 <a Class="bom" href="Parts/Jumpers.html">jumpers</a> </li>
+<li>4 <a Class="bom" href="Parts/StepperMotors.html">stepper motors</a> </li>
+</ul>
+<h3 id="tools">Tools</h3>
+<ul>
+<li>1 <a Class="bom" href="Parts/CrocodileClip.html">crocodile clip</a> </li>
+<li>1 <a Class="bom" href="Parts/Multimeter.html">multimeter</a> </li>
+</ul>
+</div>
 <div class="info-block">
-<p><strong>Note</strong><br />
+<p><strong>Note</strong>  <br />
 In the following section we will consider the CNC shiled is used to move 4 motors on axis X, Y and Z, with a clone on Z axis (therefore 2 motors for Z axis).</p>
 </div>
 <p>This is what the CNC shield should look like. </p>
@@ -76,7 +89,7 @@ In the following section we will consider the CNC shiled is used to move 4 motor
 <h2 class="page-step" id="upload-the-firmware--grbl">Step 1: Upload the firmware : Grbl</h2>
 <p>To upload Grbl on the [Arduino board], just follow instructions available on <a href="https://github.com/gnea/grbl/wiki/Compiling-Grbl" target="_blank" title="">Grbl's wiki </a>.  </p>
 <div class="info-block">
-<p><strong>Note</strong>
+<p><strong>With less than 3 axis</strong><br />
 According to the number of axis you want, you will have a few changes to make on the <code>config.h</code> file located in <code>Arduino&gt;libraries&gt;grbl</code>. Open it with a text editor, then read from line 90 to 113.<br />
 Examples:</p>
 <ul>
@@ -158,6 +171,31 @@ $132=200.000    Z Max travel, mm</b>
 <li>OR connect a 5V pin to the DIR pin of interest. On the picture above, an orange jumpers wire is connecting 5V to X.DIR.</li>
 </ul>
 <h2 id="current-limitation-for-stepper-drivers">Current limitation for stepper drivers</h2>
+<p>When refering to <a href="https://www.pololu.com/file/0J450/A4988.pdf" target="_blank" title="">A4988 datasheet from Polulu</a>, current limit should be set for each driver and its motor.   </p>
+<div class="info-block">
+<p><strong>Quote from https://www.pololu.com/product/1182</strong>
+Another way to set the current limit is to calculate the reference voltage that corresponds to your desired current limit and then adjust the current limit potentiometer until you measure that voltage on the VREF pin. The VREF pin voltage is accessible on a via that is circled on the bottom silkscreen of the circuit board. The current limit, IMAX, relates to the reference voltage as follows:</p>
+<p>IMAX=VREF8⋅RCS</p>
+<p>or, rearranged to solve for VREF:</p>
+<p>VREF=8⋅IMAX⋅RCS</p>
+<p>RCS is the current sense resistance; original versions of this board used 0.050 Ω current sense resistors, but we switched to using 0.068 Ω current sense resistors in January 2017, which makes more of the adjustment potentiometer’s range useful. </p>
+</div>
+<p>For example, with :  </p>
+<ul>
+<li>Stepper motor nominal current : 2A;</li>
+<li>RCS : 0.05 Ohm</li>
+</ul>
+<p>We have : VREF=8<em>2</em>0.05=0.8V  </p>
+<p>You can set the current limit as follow:  </p>
+<ul>
+<li>Make sure the Arduino board is powered (plugged to turned-on computer with USB cable);  </li>
+<li>Turn your <a href="Parts/Multimeter.html">multimeter</a> on, and set it to voltage measurement;  </li>
+<li>Connect it to a ground GND pin on the CNC shield. To do so, connect a <a href="Parts/JumpersWires_FemaleMale.html">female to male jumper wire</a> to the GND pin, then connect it to the black probe of the multimeter with a <a href="Parts/CrocodileClip.html">crocodile clip</a>;  </li>
+<li>Clip another <a href="Parts/CrocodileClip.html">crocodile clip</a> to a tiny screwdriver with conductive tip, and to the red probe of the multimeter;  </li>
+<li>Turn the potentiometer on the A4988 chip until you read VREF.</li>
+</ul>
+<p>This is what it should look like:<br />
+<img alt="Current limit on CNC shield with multimeter" src="images/cnc-shield_multimeter.png" title="" /></p>
 <hr />
 <p><a href="psu_control.html">Previous page</a></p>
     </div>
