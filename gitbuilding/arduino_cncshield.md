@@ -1,5 +1,8 @@
 # Update Arduino board and CNC shield  
->i **Note**  
+
+{{BOM}}
+
+>i **Note**    
 >i In the following section we will consider the CNC shiled is used to move 4 motors on axis X, Y and Z, with a clone on Z axis (therefore 2 motors for Z axis).
     
 This is what the CNC shield should look like. 
@@ -16,7 +19,7 @@ Make sure :
 ## Upload the firmware : Grbl {pagestep}
 To upload Grbl on the [Arduino board], just follow instructions available on [Grbl's wiki ](https://github.com/gnea/grbl/wiki/Compiling-Grbl).  
 
->i **Note**
+>i **With less than 3 axis**  
 >i According to the number of axis you want, you will have a few changes to make on the `config.h` file located in `Arduino>libraries>grbl`. Open it with a text editor, then read from line 90 to 113.  
 >i Examples:
 >i
@@ -101,6 +104,33 @@ As seen on the picture, there are 2 possibilities:
 * Rotate the connector to 180°;
 * OR connect a 5V pin to the DIR pin of interest. On the picture above, an orange jumpers wire is connecting 5V to X.DIR.
 
-## Current limitation for stepper drivers
+## Current limitation for stepper drivers  
+When refering to [A4988 datasheet from Polulu](https://www.pololu.com/file/0J450/A4988.pdf), current limit should be set for each driver and its motor.   
+>i **Quote from https://www.pololu.com/product/1182**
+>i Another way to set the current limit is to calculate the reference voltage that corresponds to your desired current limit and then adjust the current limit potentiometer until you measure that voltage on the VREF pin. The VREF pin voltage is accessible on a via that is circled on the bottom silkscreen of the circuit board. The current limit, IMAX, relates to the reference voltage as follows:
+>i 
+>i IMAX=VREF8⋅RCS
+>i 
+>i or, rearranged to solve for VREF:
+>i 
+>i VREF=8⋅IMAX⋅RCS
+>i 
+>i RCS is the current sense resistance; original versions of this board used 0.050 Ω current sense resistors, but we switched to using 0.068 Ω current sense resistors in January 2017, which makes more of the adjustment potentiometer’s range useful. 
 
+For example, with :  
 
+* Stepper motor nominal current : 2A;
+* RCS : 0.05 Ohm
+
+We have : VREF=8*2*0.05=0.8V  
+
+You can set the current limit as follow:  
+
+* Make sure the Arduino board is powered (plugged to turned-on computer with USB cable);  
+* Turn your [multimeter](Parts.yaml#Multimeter){qty:1, Cat:tool} on, and set it to voltage measurement;  
+* Connect it to a ground GND pin on the CNC shield. To do so, connect a [female to male jumper wire](Parts.yaml#JumpersWires_FemaleMale){qty:1} to the GND pin, then connect it to the black probe of the multimeter with a [crocodile clip](Parts.yaml#CrocodileClip){qty:1, Cat:tool};  
+* Clip another [crocodile clip]{qty:1} to a tiny screwdriver with conductive tip, and to the red probe of the multimeter;  
+* Turn the potentiometer on the A4988 chip until you read VREF.
+
+This is what it should look like:  
+![Current limit on CNC shield with multimeter](images/cnc-shield_multimeter.png)

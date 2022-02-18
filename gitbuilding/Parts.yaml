@@ -1,3 +1,24 @@
+Multimeter:
+    Name: Multimeter
+    Suppliers:
+        Conrad:
+            PartNo: 124456
+            Link: https://www.conrad.fr/p/multimetre-voltcraft-vc155-numerique-cat-iii-600-v-affichage-nombre-de-points-2000-124456
+
+CrocodileClip:
+    Name: Crocodile clips
+    Suppliers:
+        Conrad:
+            PartNo: 1570584
+            Link: https://www.conrad.fr/p/jeu-de-pinces-crocodiles-noir-rouge-blanc-vert-jaune-tru-components-93038c196-1409080-30-pcs-1570584
+
+JumpersWires_FemaleMale:
+    Name: Male/Female jumper wires
+    Suppliers:
+        Conrad:
+            PartNo: 1221397
+            Link: https://www.conrad.fr/p/mikroelektronika-mikroe-512-1-pcs-1221397
+
 Jumpers:
     Name: Jumpers
     Suppliers:
@@ -244,10 +265,9 @@ LaserCutter:
             Link: http://www.jamp78.fr/
 
 
-Screwdriver_Philips_No2:
-    Name: No. 2 Phillips screwdriver
-    Description: >
-        No2 Phillips screwdriver. This is the correct size
-        form an M4 pan head screw
-    Specs:
-        Drive Size: No. 2
+Screwdriverset:
+    Name: Screwdriver
+    Suppliers:
+        Conrad:
+            PartNo: 1761193
+            Link: https://www.conrad.fr/p/jeu-de-tournevis-stanley-by-black-decker-35-pieces-1761193

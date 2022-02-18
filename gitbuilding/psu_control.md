@@ -1,5 +1,8 @@
 # Power Suply Unit and control box
-You will fin here how to make the box for PSU and control.
+
+{{BOM}}
+
+You will find here how to make the box for PSU and control. Get yourself a [screwdriver set](Parts.yaml#Screwdriverset){qty:1} since there are a lot of screws!
 
 ## Cut the PMMA sheets {pagestep}
 Cut the [5 mm PMMA sheets](Parts.yaml#PMMAsheet){qty:2} (2 sheets should be enough). Files are available for laser cutter with [DXF format by clicking here](files/dxf/psu_control_box.dxf), and the FreeCAD files are availables by clicking here if you want to make any change or export the files in another format.  
