@@ -168,10 +168,11 @@ $132=200.000    Z Max travel, mm</b>
     <img onmouseover="getElementById('gallery-show0').src=this.src" src="images/cnc-shield_x-backward-inverse.png" alt="" />
 </div>
 <div class="gallery-show"><img id="gallery-show0" src="images/cnc-shield_x-backward-jumper.png" alt=""/></div>
-<p>As seen on the picture, there are 2 possibilities:</p>
+<p>As seen on the picture, there are 3 possibilities:</p>
 <ul>
 <li>Rotate the connector to 180°;</li>
-<li>OR connect a 5V pin to the DIR pin of interest. On the picture above, an orange jumpers wire is connecting 5V to X.DIR.</li>
+<li>Connect a 5V pin to the DIR pin of interest. On the picture above, an orange jumpers wire is connecting 5V to X.DIR.</li>
+<li>Change the $3 parameter mask.</li>
 </ul>
 <h2 id="current-limitation-for-stepper-drivers">Current limitation for stepper drivers</h2>
 <p>When refering to <a href="https://www.pololu.com/file/0J450/A4988.pdf" target="_blank" title="">A4988 datasheet from Polulu</a>, current limit should be set for each driver and its motor.   </p>
@@ -199,6 +200,36 @@ Another way to set the current limit is to calculate the reference voltage that 
 </ul>
 <p>This is what it should look like:<br />
 <img alt="Current limit on CNC shield with multimeter" src="images/cnc-shield_multimeter.png" title="" /></p>
+<h2 id="add-limit-switches">Add limit switches</h2>
+<h3 id="attach-the-limit-switches">Attach the limit switches</h3>
+<p>Possibilities :<br />
+<em> No limit switches;<br />
+</em> 1 limit switch / axis;<br />
+* 2 limit switches / axis (1 on each side).  </p>
+<p>Different configurations:<br />
+<em> Normally opened;<br />
+</em> Normally closed.  </p>
+<h3 id="test-the-limit-switches">Test the limit switches</h3>
+<p>Make sure that all axis turns in the good direction, so that the limit switches will be triggered. If not, then change parameter $23 with another mask.</p>
+<div class="caution-block">
+<p><strong>Important note</strong></p>
+<p>When testing the homing without the belts attached, you have to trigger the limit switches manually. And the limit switches should be triggered 2 times, within a short period of time. <br />
+The sequence of event is the following :<br />
+1. Motor moves toward the limit switch and hit it;<br />
+2. Motor moves backward for a distance set with parameter $27;<br />
+3. Motor moves toward the limit switch and hit it a 2nd time;<br />
+4. Then it moves backward for distance $27 again.<br />
+When triggering the limit switch manually, if it is not triggered twice at within the correct amount of time, grbl will stop the process with an "ALARM" warning.</p>
+</div>
+<div class="caution-block">
+<p><strong>What to do if Z limit switch is not working</strong></p>
+<p>As you can read in the config.h file (Arduino/libraries/grbl/), for Arduino Unos when VARIABLE_SPINDLE is enable Z-limit pin D11 and spindle enable pin D12 switch ! Therefore you have to possibilities to fix that :<br />
+- If you don't use the variable spindle, then comment the line 339 in config.h "#define VARIABLE_SPINDLE", and reupload grbl on the Arduino.<br />
+- If you use it, then plug the Z-limit switch on the SpinEn pins on the CNC shield, and the spindle wires to the z-lim pins.</p>
+</div>
+<h2 id="change-the-stepsmm">Change the steps/mm</h2>
+<p>For regular pulley and belts : https://blog.prusa3d.com/calculator_3416/
+For the Z-axis = uStep<em>nb_step/(2</em>Pi<em>r_gear) = 16</em>200/(3.14*15)</p>
 <hr />
 <p><a href="psu_control.html">Previous page</a></p>
     </div>
