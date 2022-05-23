@@ -129,7 +129,7 @@ You can set the current limit as follow:
 
 * Make sure the Arduino board is powered (plugged to turned-on computer with USB cable);  
 * Turn your [multimeter](Parts.yaml#Multimeter){qty:1, Cat:tool} on, and set it to voltage measurement;  
-* Connect it to a ground GND pin on the CNC shield. To do so, connect a [female to male jumper wire](Parts.yaml#JumpersWires_FemaleMale){qty:1} to the GND pin, then connect it to the black probe of the multimeter with a [crocodile clip](Parts.yaml#CrocodileClip){qty:1, Cat:tool};  
+* Connect it to a ground GND pin on the CNC shield. To do so, connect a [female to male jumper wire](Parts.yaml#JumpersWires_FemaleMale){qty:1} to the GND pin, then connect it to the black probe of the multimeter with a [crocodile clip](Parts.yaml#CrocodileClip){qty:1, Cat:testconnector};  
 * Clip another [crocodile clip]{qty:1} to a tiny screwdriver with conductive tip, and to the red probe of the multimeter;  
 * Turn the potentiometer on the A4988 chip until you read VREF.
 

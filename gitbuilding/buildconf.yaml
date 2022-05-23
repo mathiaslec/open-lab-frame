@@ -10,10 +10,10 @@ Email: engineering@centuri-livingsystems.org
 
 
 #Uncomment below to add custom categories
-#CustomCategories:
-#    printedtool:
-#        Reuse: False
-#        DisplayName: Printed tools
+CustomCategories:
+    testconnector:
+        Reuse: False
+        DisplayName: Test Connectors
 
 #Uncomment below to set a custom default category
 #DefaultCategory: printedtool
