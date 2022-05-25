@@ -59,9 +59,10 @@ for line in f:
     print(b" : " + grbl_out.strip())
 
 # Wait here until grbl is finished to close serial port and file.
-# input("  Press <Enter> to exit and disable grbl.")
+input("  Press <Enter> to exit and disable grbl.")
 
 # Close file and serial port
 f.close()
 s.close()
+
 subprocess.Popen("pkill raspistill", shell=True)
